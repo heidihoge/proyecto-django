@@ -6,9 +6,9 @@
 </head>
 <body>
 <h1>HOLA HEIDI !</h1>
-<form>
+    <form method="POST" action="">{% csrf_token %}
    {{ form.as_p}}
-    <input type="button" value="registrar">
+    <input type="submit" value="registrar">
 </form>
 
 </body>
