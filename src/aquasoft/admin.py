@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Curso
+from .forms import RegModelForm
 
 # Register your models here.
 class AdminCurso(admin.ModelAdmin):
@@ -8,7 +9,8 @@ class AdminCurso(admin.ModelAdmin):
     list_filter = ["nombre_curso"]
     list_editable = ["descripcion"]
     search_fields =  ["nombre_curso"]
-    class Meta:
-        model = Curso
+    form = RegModelForm
+    # class Meta:
+    #     model = Curso
 
 admin.site.register(Curso,AdminCurso)
