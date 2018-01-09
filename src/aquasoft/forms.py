@@ -1,5 +1,8 @@
 from django import forms
+from datetime import date
 
 class RegForm(forms.Form):
-    nombre = forms.CharField(max_length=100)
-    edad = forms.IntegerField()
+    nombre_curso = forms.CharField(max_length=100)
+    descripcion = forms.CharField(max_length=100)
+
+

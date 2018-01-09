@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from .forms import RegForm
+from .models import Curso
 # Create your views here.
 def inicio(request):
     form = RegForm(request.POST or None)
     if form.is_valid():
         form_data = form.cleaned_data
-        print(form_data.get("nombre"))
-        print(form_data.get("edad"))
+        nombre_cur= form_data.get("nombre_curso")
+        desc_cur = form_data.get("descripcion")
+        obj = Curso.objects.create(nombre_curso = nombre_cur, descripcion= desc_cur)
     context = {
         "form" : form
     }
