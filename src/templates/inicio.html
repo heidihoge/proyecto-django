@@ -2,13 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>AQUASOFT</title>
 </head>
 <body>
-<h1>HOLA HEIDI !</h1>
-    <form method="POST" action="">{% csrf_token %}
-   {{ form.as_p}}
-    <input type="submit" value="registrar">
+
+
+{{ titulo }}
+{{ request.user }}
+<hr/>
+<br/>
+
+<form method="POST" action="">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="registrar"/>
 </form>
 
 </body>
