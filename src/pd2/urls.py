@@ -19,6 +19,8 @@ from aquasoft import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('inicio/', views.inicio, name = 'inicio')
+    path('inicio/', views.inicio, name = 'inicio'),
+    path('contact/', views.contact, name = 'contact')
+
 
 ]
