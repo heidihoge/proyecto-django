@@ -26,7 +26,7 @@ def inicio(request):
         # nombre_cur= form_data.get("nombre_curso")
         # desc_cur = form_data.get("descripcion")
         # obj = Curso.objects.create(nombre_curso = nombre_cur, descripcion= desc_cur)
-    return render(request,"base.html",context)
+    return render(request,"inicio.html",context)
 
 def contact (request):
     form = ContactForm (request.POST or None)
