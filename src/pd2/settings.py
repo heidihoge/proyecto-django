@@ -23,6 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'gul1m^tnbf5cqoc1q57zg+kncg26wvl(%x$&=k9h=hm!((ruzi'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+#si debug es true , estamos en desarrollo, no podemos tener asi en produccion
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -121,3 +122,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,"static_pro", "static"),
+    # '/var/www/static/',
+]
+
+#para produccion , pero lo imitamos en entorno virtual
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),"static_env","static_root")
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"static_env","media_root")
+
