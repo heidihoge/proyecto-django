@@ -44,3 +44,6 @@ def contact (request):
             "titulo": "Gracias por escribirnos"
         }
     return render(request, "forms.html", context)
+
+def principal (request):
+    return render(request, "base.html")

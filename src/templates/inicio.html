@@ -1,29 +1,20 @@
 {% include "navbar.html"%}
 {% load crispy_forms_tags %}
 
-{#<!DOCTYPE html>#}
-{#<html lang="en">#}
-{#<head>#}
-{#    <meta charset="UTF-8">#}
-{#    <title>AQUASOFT</title>#}
-{##}
-{#</head>#}
-
-<br/>
+<div class="container-fluid">
+<hr/>
 {{ titulo }}
 {{ request.user }}
+
 <hr/>
-
-
 
 {% if form %}
 
 <form method="POST" action="">{% csrf_token %}
     {{ form|crispy }}
     <br/>
-    <input type="submit" value="registrar"/>
+    <input class='btn btn-success' type="submit" value="Guardar"/>
     <br/>
 </form>
-
 
 {% endif %}
