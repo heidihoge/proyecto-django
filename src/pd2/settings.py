@@ -32,13 +32,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #apps de django
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #apps de terceros
+    'crispy_forms',
+    #apps propias
     'aquasoft',
+
 
 
 ]
@@ -54,6 +59,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'pd2.urls'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
