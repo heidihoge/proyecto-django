@@ -1,24 +1,25 @@
-{% extends "base.html" %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>AQUASOFT</title>
+{% include "navbar.html"%}
 
-</head>
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>AQUASOFT</title>#}
+{##}
+{#</head>#}
 
-
+<br/>
 {{ titulo }}
 {{ request.user }}
 <hr/>
-<br/>
+
 
 
 {% if form %}
-    {% block content %}
+
 <form method="POST" action="">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="registrar"/>
 </form>
-    {% endblock %}
+
 {% endif %}

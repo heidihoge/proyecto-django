@@ -29,10 +29,18 @@ def inicio(request):
     return render(request,"inicio.html",context)
 
 def contact (request):
+    titulo = "Hola"
+
     form = ContactForm (request.POST or None)
+    context = {
+        "form": form,
+        "titulo": titulo,
+
+    }
     if form.is_valid():
         print(form.cleaned_data)
-    context= {
-        "form": form,
-    }
+
+        context = {
+            "titulo": "Gracias por escribirnos"
+        }
     return render(request, "forms.html", context)
