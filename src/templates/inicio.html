@@ -9,12 +9,16 @@
 <hr/>
 
 {% if form %}
-
+<div class="row ">
+    <div class="col-sm-6 ">
 <form method="POST" action="">{% csrf_token %}
     {{ form|crispy }}
+
     <br/>
     <input class='btn btn-success' type="submit" value="Guardar"/>
     <br/>
 </form>
 
 {% endif %}
+</div>
+</div>

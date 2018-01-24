@@ -1,0 +1,34 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | AQUASOFT{% endblock %}
+{% block extrastyle %}
+<style>
+    #header {
+    background-color: #10707f;
+    }
+    #branding {
+     display: inline-block;
+     width: 30px;
+     height: 30px;
+     margin-left: 130px;
+
+    }
+
+    #login-form .form-row label{
+        text-align: center;
+     display: block;
+        #background: linear-gradient(to right, blue , #17a2b8);
+    }
+    body.login{
+         background: linear-gradient(to right, blue , #17a2b8) !important;
+    }
+
+</style>
+
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">AQUASOFT</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
