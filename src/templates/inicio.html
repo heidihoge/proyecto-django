@@ -1,24 +1,87 @@
-{% include "navbar.html"%}
-{% load crispy_forms_tags %}
+{% extends "admin/base_site.html" %}
 
-<div class="container-fluid">
-<hr/>
-{{ titulo }}
-{{ request.user }}
+{% load i18n static %}
+{% load static %}
 
-<hr/>
 
-{% if form %}
-<div class="row ">
-    <div class="col-sm-6 ">
-<form method="POST" action="">{% csrf_token %}
-    {{ form|crispy }}
+{% load static %}
 
-    <br/>
-    <input class='btn btn-success' type="submit" value="Guardar"/>
-    <br/>
-</form>
+{% block content %}
 
-{% endif %}
-</div>
-</div>
+    <!-- Bootstrap core CSS -->
+{#   <link href= "{% static 'css/bootstrap.min.css' %}" rel="stylesheet">#}
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
+
+
+  </head>
+    <section>
+            <h1>Menú principal</h1>
+
+
+               <div style="position: absolute; top:200px; left: 100px;">
+        <div class="img">
+            <img src="{% static 'admin/img/ajustes.png' %} " class="img-responsive img-rounded " >
+            <h4>ADMINISTRACIÓN</h4>
+              <a class="nav-link active" href="/admin">  <span class="text-muted">ajustes de contenidos</span> </a>
+             </div></div>
+
+
+                <div style="position: absolute; top:200px; left: 300px;">
+        <div class="img">
+            <img src="{% static 'admin/img/natacion.png' %} " class="img-responsive img-rounded " >
+            <h4>GESTION DE CURSOS</h4>
+              <a class="nav-link active" href="/admin">  <span class="text-muted">cursos y horarios</span> </a>
+             </div></div>
+
+
+        <div style="position: absolute; top:200px; left: 550px;">
+            <div class="img">
+            <img src="{% static 'admin/img/indumentaria.png' %} " class="img-responsive img-rounded " >
+              <h4>VENTAS</h4>
+                <a class="nav-link active" href="/admin">  <span class="text-muted">uniformes</span> </a>
+
+             </div></div>
+
+
+        <div style="position: absolute; top:200px; left: 750px;">
+            <div class="img">
+            <img src="{% static 'admin/img/inscripcion.png' %} " class="img-responsive img-rounded " >
+
+              <h4>GESTION DE ALUMNOS</h4>
+                <a class="nav-link active" href="/admin">  <span class="text-muted">incripciones</span> </a>
+            </div></div>
+
+
+
+        <div style="position: absolute; top:200px; left: 950px;">
+            <div class="img">
+            <img src="{% static 'admin/img/asistencia.png' %} " class="img-responsive img-rounded " >
+
+              <h4>ASISTENCIA</h4>
+              <a class="nav-link active" href="/admin">  <span class="text-muted">control de asitencia</span> </a>
+            </div></div>
+
+         <div style="position: absolute; top:200px; left: 1150px;">
+            <div class="img">
+            <img src="{% static 'admin/img/cobranza.png' %} " class="img-responsive img-rounded " >
+
+              <h4>COBRANZAS</h4>
+             <a class="nav-link active" href="/admin">  <span class="text-muted">cobro de cuotas</span> </a>
+            </div></div>
+
+
+        <div style="position: absolute; top:200px; left: 1350px;">
+            <div class="img">
+            <img src="{% static 'admin/img/analitica.png' %} " class="img-responsive img-rounded " >
+
+              <h4>REPORTES</h4>
+              <a class="nav-link active" href="/admin">  <span class="text-muted">ingresos/egresos</span> </a>
+            </div></div>
+
+
+
+
+          </section>
+
+  {% endblock %}

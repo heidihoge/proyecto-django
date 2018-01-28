@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from .forms import ContactForm ,RegModelForm
 from .models import Curso
+
 # Create your views here.
 def inicio(request):
     form = RegModelForm(request.POST or None)
