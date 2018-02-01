@@ -62,15 +62,52 @@ h1 {
   padding-top: 1rem;
   padding-bottom: 1.5rem;
 }
-.grid {
+.grid, .menu {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-gap: 1px;
-  grid-auto-rows: minmax(1px, auto);
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/**
+Grid size for menu
+ */
+
+@media only screen and (min-width: 768px) {
+    /* tablets and desktop */
+  .menu {
+    grid-template-columns: repeat(5, 1fr) !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+    /* phones */
+  .menu {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+    /* portrait phones */
+  .menu {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
 }
 
 
 
+/**
+End grid size for menu
+ */
+
+.menu-action {
+  padding: 15px;
+
+  text-align: center;
+}
+.menu-action:hover {
+  background-color: antiquewhite;
+}
+
+
 .img-responsive{
-  width: 150px; height: 150px
+  width: 120px; height: 120px
 }

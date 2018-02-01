@@ -8,5 +8,5 @@ class Curso(models.Model):
     date = date.today()
 
     def __str__(self):
-        return self.nombre_curso
+         return self.nombre_curso
 

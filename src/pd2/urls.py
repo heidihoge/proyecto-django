@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     re_path(r'^admin\/', admin.site.urls),
-    re_path(r'^admin/inicio/',views.inicio, name='inicio'),
+    re_path(r'^admin\/inicio/',views.inicio, name='inicio'),
     re_path(r'^inicio\/$', views.inicio, name='inicio'),
     re_path(r'^principal\/$', views.principal, name = 'principal'),
     re_path(r'^contact\/$', views.contact, name = 'contact')

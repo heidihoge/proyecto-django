@@ -3,13 +3,59 @@ from django.shortcuts import render
 from .forms import ContactForm ,RegModelForm
 from .models import Curso
 
+menus = {
+    "ajustes": {
+        "url": "/admin",
+        "img": "admin/img/ajustes.png",
+        "title": "ADMINISTRACIÓN",
+        "desc": "Ajustes de contenidos",
+    },
+    "natacion": {
+        "url": "/admin",
+        "img": "admin/img/natacion.png",
+        "title": "GESTION DE CURSOS",
+        "desc": "Cursos y horarios",
+    },
+    "indumentaria": {
+        "url": "/admin",
+        "img": "admin/img/indumentaria.png",
+        "title": "VENTAS",
+        "desc": "Uniformes",
+    },
+    "inscripcion": {
+        "url": "/admin",
+        "img": "admin/img/inscripcion.png",
+        "title": "GESTION DE ALUMNOS",
+        "desc": "Incripciones",
+    },
+    "asistencia": {
+        "url": "/admin",
+        "img": "admin/img/asistencia.png",
+        "title": "ASISTENCIA",
+        "desc": "Control de asitencia",
+    },
+    "cobranza": {
+        "url": "/admin",
+        "img": "admin/img/cobranza.png",
+        "title": "COBRANZAS",
+        "desc": "Cobro de cuotas",
+    },
+    "analitica": {
+        "url": "/admin",
+        "img": "admin/img/analitica.png",
+        "title": "REPORTES",
+        "desc": "Ingresos/Egresos",
+    }
+}
+
 # Create your views here.
 def inicio(request):
     form = RegModelForm(request.POST or None)
     titulo = "Hola"
     context = {
         "titulo": titulo,
-        "form": form
+        "form": form,
+        "menus": menus
     }
     if form.is_valid():
         instance = form.save(commit=False) #esto es para que no se guarde hasta que cumpla lo que queramos
@@ -19,8 +65,8 @@ def inicio(request):
         instance.save() #esto es lo que hace que se guarde en la base de datos
 
         context = {
-            "titulo": "Gracias por cargar un curso"
-
+            "titulo": "Gracias por cargar un curso",
+            "menus": menus
         }
 
         # form_data = form.cleaned_data
